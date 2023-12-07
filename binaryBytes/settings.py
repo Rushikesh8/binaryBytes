@@ -48,7 +48,8 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += [
     'rest_framework',
-    'rest_framework_simplejwt'
+    'rest_framework_simplejwt',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -187,6 +188,8 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
