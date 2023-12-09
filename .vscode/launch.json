@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Django",
+            "type": "python",
+            "request": "launch",
+            "pythonPath": "${workspaceRoot}/venv/bin/python3.9",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "justMyCode": true,
+            "env": {
+                "SECRET_KEY":"h^z23$qr_s_wd65@gnj7a=xs7t05$w7q8!x_8zsld-",
+                "DB_NAME":"binarybytes",
+                "DB_USER":"postgres",
+                "DB_PASSWORD":"pgadmin@4321",
+                "DB_HOST":"localhost",
+                "DB_PORT":"5432"
+            }
+        }
+    ]
+}

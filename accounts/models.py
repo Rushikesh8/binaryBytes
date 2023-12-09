@@ -37,14 +37,15 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
     contact = models.CharField(_('contact'),max_length=15, unique=True)
     first_name = models.CharField(_('first_name'),max_length=150, blank=True)
     last_name = models.CharField(_('last_name'),max_length=150, blank=True)
+    upi_id = models.CharField(_('upi_id'),max_length=50, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
 
     objects = CustomAccountManager()
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['contact']
+    USERNAME_FIELD = 'contact'
+    REQUIRED_FIELDS = ['email']
 
     def __str__(self):
-        return str(self.email)
+        return str(self.contact)

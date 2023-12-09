@@ -7,7 +7,7 @@ class RegisterViewSerializer(ModelSerializer):
     
     class Meta:
         model = CustomUser
-        fields = ["email","username","password","first_name","last_name","oraganization","role"]
+        fields = ["email","contact","password","upi_id","first_name","last_name"]
         extra_kwargs = {"password":{"write_only":True}}
 
     def create(self,validated_data):
@@ -23,7 +23,5 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
-
-        token['username'] = f"{user.first_name.capitalize()} {user.last_name.capitalize()}"
-
+        token['full_name'] = f"{user.first_name.capitalize()} {user.last_name.capitalize()}"
         return token
